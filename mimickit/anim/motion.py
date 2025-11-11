@@ -1,6 +1,7 @@
 import enum
 import numpy as np
 import pickle
+import joblib
 
 class LoopMode(enum.Enum):
     CLAMP = 0
@@ -8,7 +9,7 @@ class LoopMode(enum.Enum):
 
 def load_motion(file):
     with open(file, "rb") as filestream:
-        in_dict = pickle.load(filestream)
+        in_dict = joblib.load(filestream)
 
         loop_mode_val = in_dict["loop_mode"]
         fps = in_dict["fps"]

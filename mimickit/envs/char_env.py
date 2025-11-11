@@ -310,7 +310,8 @@ class CharEnv(sim_env.SimEnv):
     def _build_body_ids_tensor(self, body_names):
         char_id = self._get_char_id()
         body_ids = []
-
+        print(self._engine.get_actor_body_names(0, char_id))  # --- IGNORE ---
+        print(len(self._engine.get_actor_body_names(0, char_id)))  # --- IGNORE ---
         for body_name in body_names:
             body_id = self._engine.find_actor_body_id(0, char_id, body_name)
             assert(body_id != -1)

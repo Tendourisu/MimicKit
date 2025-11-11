@@ -1,0 +1,15 @@
+--num_envs 1
+--visualize false
+--mode test
+--model_file output/20251111-113806_train/20251111-113806_train_model.pt --test_episodes 2
+--test_episodes 2
+
+--env_config data/envs/deepmimic_g1_env.yaml
+--agent_config data/agents/deepmimic_g1_ppo_agent.yaml
+
+#--log_file output/251110_184144_train/log_251110_184144_train.txt
+#--out_model_file output/251110_184144_train/251110_184144_train_model.pt
+#--int_output_dir output/251110_184144_train/
+
+#--logger wandb
+#--rand_seed_key 42

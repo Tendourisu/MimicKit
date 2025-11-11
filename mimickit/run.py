@@ -85,8 +85,10 @@ def run(rank, num_procs, device, master_port, args):
     num_envs = args.parse_int("num_envs", 1)
     visualize = args.parse_bool("visualize", True)
     logger_type = args.parse_string("logger", "tb")
-    log_file = args.parse_string("log_file", "output/log.txt")
-    out_model_file = args.parse_string("out_model_file", "output/model.pt")
+    import time
+    time_str = time.strftime("%Y%m%d-%H%M%S")
+    log_file = args.parse_string("log_file", f"output/{time_str}_{mode}/log_{time_str}_{mode}.txt")
+    out_model_file = args.parse_string("out_model_file", f"output/{time_str}_{mode}/{time_str}_{mode}_model.pt")
     int_output_dir = args.parse_string("int_output_dir", "")
     model_file = args.parse_string("model_file", "")
 

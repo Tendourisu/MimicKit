@@ -1,0 +1,2 @@
+python mimickit/run.py --arg_file args/my_deepmimic_g1_ppo_args.txt
+python mimickit/run.py --arg_file args/my_deepmimic_g1_ppo_test_args.txt

@@ -13,11 +13,10 @@ class DeepMimicEnv(char_env.CharEnv):
         env_config = config["env"]
         self._enable_early_termination = env_config["enable_early_termination"]
         self._termination_height = env_config["termination_height"]
-        self._num_phase_encoding = env_config.get("num_phase_encoding", 0)
-
         self._pose_termination = env_config.get("pose_termination", False)
         self._pose_termination_dist = env_config.get("pose_termination_dist", 1.0)
         self._enable_phase_obs = env_config.get("enable_phase_obs", True)
+        self._num_phase_encoding = env_config.get("num_phase_encoding", 0)
         self._enable_tar_obs = env_config.get("enable_tar_obs", False)
         self._tar_obs_steps = env_config.get("tar_obs_steps", [1])
         self._tar_obs_steps = torch.tensor(self._tar_obs_steps, device=device, dtype=torch.int)
@@ -110,7 +109,8 @@ class DeepMimicEnv(char_env.CharEnv):
             self._joint_err_w = torch.ones(num_joints - 1, device=self._device, dtype=torch.float32)
         else:
             self._joint_err_w = torch.tensor(joint_err_w, device=self._device, dtype=torch.float32)
-
+        print (self._joint_err_w.shape[-1], num_joints - 1)
+        print(len(self._kin_char_model._joints))  # --- IGNORE ---
         assert(self._joint_err_w.shape[-1] == num_joints - 1)
         
         dof_size = self._kin_char_model.get_dof_size()
