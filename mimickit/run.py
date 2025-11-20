@@ -89,6 +89,10 @@ def run(rank, num_procs, device, master_port, args):
     time_str = time.strftime("%Y%m%d-%H%M%S")
     log_file = args.parse_string("log_file", f"output/{time_str}_{mode}/log_{time_str}_{mode}.txt")
     out_model_file = args.parse_string("out_model_file", f"output/{time_str}_{mode}/{time_str}_{mode}_model.pt")
+    amp = True
+    if amp ==True:
+        out_model_file = args.parse_string("out_model_file", f"output/{time_str}_{mode}_amp/{time_str}_{mode}_amp_model.pt")
+        log_file = args.parse_string("log_file", f"output/{time_str}_{mode}_amp/log_{time_str}_{mode}_amp.txt")
     int_output_dir = args.parse_string("int_output_dir", "")
     model_file = args.parse_string("model_file", "")
 

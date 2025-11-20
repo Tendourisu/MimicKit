@@ -1,0 +1,12 @@
+--num_envs 4096
+
+--env_config data/envs/my_amp_steering_g1_env.yaml
+--agent_config data/agents/my_amp_task_g1_agent.yaml
+
+#--log_file output/251110_184144_train/log_251110_184144_train.txt
+#--out_model_file output/251110_184144_train/251110_184144_train_model.pt
+#--int_output_dir output/251110_184144_train/
+
+--logger wandb
+--visualize false
+#--rand_seed_key 42

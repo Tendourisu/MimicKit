@@ -51,7 +51,7 @@ class TaskSteeringEnv(amp_env.AMPEnv):
         return
     
     def _build_markers(self, env_id):
-        asset_file = "data/assets/objects/steering_marker.urdf"
+        asset_file = "data/motions/MimicKit_Data/assets/objects/steering_marker.urdf"
 
         tar_marker_id = self._engine.create_actor(env_id=env_id, 
                                              asset_file=asset_file, 

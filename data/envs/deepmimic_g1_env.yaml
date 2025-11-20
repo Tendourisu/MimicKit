@@ -2,7 +2,19 @@ env_name: "deepmimic"
 
 env:
     char_file: "data/motions/MimicKit_Data/assets/g1/g1.xml"
-    motion_file: "/home/ywr/zhd/MimicKit/data/motions/convert/0814-walking-zby_walking-zby-06_pkl.mimic.pkl"
+    #motion_file: "/home/ywr/zhd/MimicKit/data/motions/convert/mocap_0826_drop_extend60_0817_7_extend60.mimic.pkl"
+    #motion_file: "/home/ywr/zhd/MimicKit/data/motions/convert/mocap_0826_walk_yaw__sub_0826_25.mimic.pkl"
+    #motion_file: "data/motions/convert/mocap_0826_rise_extend60_sub_0817_10_extend60.mimic.pkl"
+    #motion_file: "/home/ywr/zhd/MimicKit/data/motions/convert/mocap_0826_rise_extend60_sub_0817_10_extend60.mimic.pkl"
+    motion_file: "data/motions/convert/mocap_0826_walk_x__sub_0826_3.mimic.pkl"
+    #motion_file: "data/motions/convert/mocap_0826_walk_yaw__sub_0826_25.mimic.pkl"
+    ## 20251117-225232_train
+    #motion_file: "data/motions/convert/batch_motion.yaml"
+    ## 20251118-214640_train
+    #motion_file: "data/motions/MimicKit_Data/motions/g1/g1_walk.pkl"
+    ## 20251119-134439_train
+    #motion_file: "data/motions/convert/motion_test.yaml"
+    
 
     key_bodies: ["left_ankle_roll_link", "right_ankle_roll_link", "head_link", "left_wrist_yaw_link", "right_wrist_yaw_link"]
     contact_bodies: ["left_knee_link", "left_ankle_pitch_link", "left_ankle_roll_link", "right_knee_link", "right_ankle_pitch_link", "right_ankle_roll_link"]
@@ -16,14 +28,15 @@ env:
     camera_mode: "track"
 
     enable_early_termination: True
-    termination_height: 0.3
+    termination_height: 0
     pose_termination: True
-    pose_termination_dist: 1.0 # m
+    pose_termination_dist: 0.5 # m
     enable_phase_obs: False
     num_phase_encoding: 4
     enable_tar_obs: True
     tar_obs_steps: [1, 2, 3]
-    rand_reset: True
+    rand_reset: Flase
+    #rand_reset: True
 
     ref_char_offset: [2.0, 0.0, 0.0] # m
     log_tracking_error: True
